@@ -1,0 +1,21 @@
+Eight-symbol superpermutation of length 46,178
+
+The mathematical completion construction, selections, slices and closed
+trails are due to Jay Pantone:
+https://github.com/jaypantone/superperm-upper-43-80
+Commit c8fb7ffdd69be1375580710ae11b47a295b1f0f6; Apache License 2.0.
+
+The search uses arbitrary visible row lengths as developed by Jakub
+Halfar, and used his generator, word search tools and independent C
+checker during research:
+https://github.com/jhalfar/superpermutations
+Commit c9cb923057f757efa7c0f0e4c4cc1677ef3e6d3b; Apache License 2.0.
+Halfar credits weight-two trail cuts to rumstd and cuts inside a one-cycle
+to Theo H. These wider cut types did not improve the final word.
+
+Halfar's work was produced with Claude (Opus 5.5) in Claude Code.
+
+The new selection and search orchestration were prepared for William
+Echols using GPT-6.1 Sol xhigh in Codex on October 19, 2026. The
+46,178-letter word and its accompanying documentation are distributed
+under Apache License 2.0.

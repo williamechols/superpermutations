@@ -2,5 +2,11 @@
 /superpermutations/12/522737174/522737174.txt
 /superpermutations/14/93904936032/*.txt.xz
 /superpermutations/14/93904936032/93904936032.txt
+/superpermutations/14/93904804516/*.txt.xz
+/superpermutations/14/93904804516/93904804516.txt
+/superpermutations/14/93904804516/sample.txt
 
 __pycache__/
+work/
+*.swp
+*.swo

@@ -1,0 +1,60 @@
+Shorter superpermutations
+
+The superpermutations in words/ are built with the construction of Jay Pantone,
+https://github.com/jaypantone/superperm-upper-43-80 (Apache License 2.0). 2-loops, slices, the selection, the
+completion, the transport and the closed trails are his.
+
+The earlier words on 11, 12 and 13 symbols re-join the component words of his superpermutations (43,930,680,
+522,745,581 and 6,747,918,066 letters): they only change where each component is opened and in what order the
+components are joined. The later words on 10, 11, 12 and 13 symbols use other selections inside the same
+construction. These selections are derived from his file tools/construction-input.txt; they differ from his on the
+loops that his selection leaves without a slice, and some of them use slices with other numbers of visible classes,
+read from his rules.
+
+The gap-2 opening used for the n=11 and n=12 words was identified in rumstd's n=10 superpermutation of length 4,034,873
+(pull request #3 to jaypantone/superperm-upper-43-80). The 43,930,644 word was found starting from rumstd's
+43,930,668 word (pull request #4), which builds on Theo H.'s 43,930,678 word (pull request #2). The structure of the
+n=10 word here (groups of seven small closed trails written as paths or closed into loops, in chains of six) was
+read off the same word of rumstd, and the order of its groups is his.
+
+Cutting a trail inside a 1-cycle, as tools/recut_wide.c and tools/word2plan.c do, was identified in Theo H.'s n=11
+superpermutation of length 43,930,624 (pull request #6 to jaypantone/superperm-upper-43-80). The fixed-order pass of
+tools/recut.c was found independently by Theo H. and by the authors of this repository. No code from Theo H.'s
+repository (GPL-3.0-or-later) is included here; the programs in tools/, reproduce/, selection/, arrange/ and proofs/
+were written for this repository.
+
+proofs/lean/constant/patches/SuperpermutationUpperBound/Assembly/SupportedStates.lean is a modified copy of the file
+SuperpermutationUpperBound/Assembly/SupportedStates.lean of Jay Pantone's repository
+https://github.com/jaypantone/superperm-upper-43-80 (commit c8fb7ffdd69be1375580710ae11b47a295b1f0f6, Apache License
+2.0). Two changes: one import is replaced by another, and the section Partition.SprintFamily at the end of the file is
+removed. The file says so at its top, and proofs/lean/constant/patches/SupportedStates.diff shows the change. The other
+files of proofs/lean/constant were written for this repository on top of his library; four passages follow his text
+and are named in proofs/lean/constant/README.md.
+
+The lower bounds of proofs/lean/lower and proofs/lean/n7 are proved on top of Xiaolong Liu's preimage-chain library
+(https://github.com/Haruhiyuki/superpermutations-preimage-chain-lower-bounds) and of the Hunter-Raudvere library
+(https://github.com/urdvr/superpermutations-hunter). Both are used unchanged and are not included here.
+
+proofs/lean/n8 holds changes to William Echols's superperm8-ge-46130
+(https://github.com/williamechols/superperm8-ge-46130, commit 893ab2d92669ea56d012ceca626bf01ca631e920, Apache License
+2.0): for three variants a diff against his files (variants/*/changes.diff, which contains lines of his files), and new
+files. The files that proofs/lean/n8/build.sh puts together from a checkout of his repository are modified copies of
+his work, and each changed file says at its top that it was changed. His NOTICE, which names the projects his is
+derived from (superperm7-ge-5898, Copyright 2026 Anthropic, PBC, Apache License 2.0; superperm6, Copyright (c) 2026
+Benjamin Grayzel, MIT License), is reproduced in proofs/lean/n8/NOTICE.echols.
+
+By Jakub Halfar, with Claude (Opus 5.5) in Claude Code. Jakub Halfar chose the problem and directed the work; Claude
+designed and ran the searches and wrote the code and the text.
+
+Modifications in this repository
+
+The embedded selection in 93904804516.spg.xz is unchanged from
+arrange/data/n12t-selection.txt.xz in jhalfar/superpermutations, commit
+c9cb923057f757efa7c0f0e4c4cc1677ef3e6d3b. Its original comments are preserved.
+
+William Echols, working with GPT-6.1 Sol xhigh, optimized the group openings
+and joins of the earlier 93,904,936,032-symbol construction to obtain
+93,904,804,516 symbols on October 18, 2026. The JSON group plan, Python
+decoder and structural verifier were prepared for this repository.
+The construction uses Jay Pantone's slices, transport, completion and
+closed trails; the seed data is Jakub Halfar's. Distributed under Apache 2.0.
