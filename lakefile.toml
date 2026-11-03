@@ -1,0 +1,46 @@
+# Superpermutation Almanac batch: a kernel-checked lower bound for n = 7.
+name = "almanac_submission"
+defaultTargets = ["AlmanacSolution"]
+
+# The four reserved Almanac libraries.
+[[lean_lib]]
+name = "AlmanacDefs"
+
+[[lean_lib]]
+name = "AlmanacStatement"
+
+[[lean_lib]]
+name = "AlmanacChallenge"
+
+[[lean_lib]]
+name = "AlmanacSolution"
+
+# Vendored libraries (see NOTICE).
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Hunter"
+globs = ["Hunter.+"]
+
+[[lean_lib]]
+name = "PreimageChain"
+globs = ["PreimageChain.+"]
+
+[[lean_lib]]
+name = "Superperm"
+globs = ["Superperm.+"]
+
+[[lean_lib]]
+name = "LowerBounds"
+globs = ["LowerBounds.+"]
+
+# The proof of S(7) >= 5,897.
+[[lean_lib]]
+name = "K5897"
+globs = ["K5897.+"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"

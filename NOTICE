@@ -1,0 +1,36 @@
+S(7) >= 5,897, checked by the Lean kernel alone
+Copyright 2026 William Echols. Licensed under the Apache License, Version 2.0 (LICENSE).
+
+This repository contains third-party Lean sources, copied at the commits below and kept under their own
+licences. Apart from the changes listed under "Lean 4.35 port", they are unchanged.
+
+LowerBounds/, Superperm/
+  Jakub Halfar, https://github.com/jhalfar/superpermutations, commit a93638e798cc380b19f84a01a6c9edacf8dcf114,
+  directories proofs/lean/n7/LowerBounds, proofs/lean/lower/LowerBounds and proofs/lean/words/Superperm.
+  Apache License 2.0 (LICENSES/Apache-2.0.txt).
+  K5897/Engine.lean, K5897/Sound.lean, K5897/Cap.lean and K5897/CapRules.lean are adapted from his
+  proofs/lean/small/K6/Engine.lean, Sound.lean, Cap.lean and CapRules.lean (6 symbols to 7, new tables).
+
+Hunter/
+  Zach Hunter and Uku Raudvere, https://github.com/urdvr/superpermutations-hunter,
+  commit d45222190031d162feb1f6f3cf5fe2d11fab726d. Apache License 2.0 (LICENSES/Apache-2.0.txt).
+
+PreimageChain/
+  Xiaolong Liu, https://github.com/Haruhiyuki/superpermutations-preimage-chain-lower-bounds,
+  commit 8474c74a15fa59b8ce55bcf6bceaaa23b9a3dca8. Creative Commons Attribution 4.0 International
+  (LICENSES/CC-BY-4.0.txt).
+
+Challenge.lean
+  Jay Pantone, https://github.com/jaypantone/superperm-upper-43-80,
+  commit c8fb7ffdd69be1375580710ae11b47a295b1f0f6. Apache License 2.0 (LICENSES/Apache-2.0.txt).
+
+AlmanacDefs.lean, AlmanacStatement.lean, AlmanacChallenge.lean
+  The Superpermutation Almanac's scaffold (https://superpermutations.com/lean/batch-scaffold.zip).
+
+Lean 4.35 port (changes to third-party files, each marked by a comment at the change)
+  Hunter/ProofsGreedy.lean, Hunter/ProofsGreedy2.lean: `simp` in place of a `show`/`rw` that no
+    longer matches.
+  PreimageChain/ChainGraph.lean: two `simpa` steps take `Finset.mem_sdiff` explicitly and unfold `F`.
+  PreimageChain/ComponentGeometry.lean: `simp only [Finset.mem_filter]` before unfolding `IsDoor`.
+  PreimageChain/PortalCoordinates.lean: the `Fintype` instance of `PortalOrientation` written out in
+    place of `deriving Fintype`.
