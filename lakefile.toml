@@ -1,0 +1,46 @@
+# Superpermutation Almanac batch: a kernel-checked lower bound for n = 11.
+name = "almanac_submission"
+defaultTargets = ["AlmanacSolution"]
+
+# The four reserved Almanac libraries.
+[[lean_lib]]
+name = "AlmanacDefs"
+
+[[lean_lib]]
+name = "AlmanacStatement"
+
+[[lean_lib]]
+name = "AlmanacChallenge"
+
+[[lean_lib]]
+name = "AlmanacSolution"
+
+# Vendored libraries (see NOTICE). LowerBounds/SGen/ holds the generated certificate.
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Hunter"
+globs = ["Hunter.+"]
+
+[[lean_lib]]
+name = "PreimageChain"
+globs = ["PreimageChain.+"]
+
+[[lean_lib]]
+name = "Superperm"
+globs = ["Superperm.+"]
+
+[[lean_lib]]
+name = "LowerBounds"
+globs = ["LowerBounds.+"]
+
+# The proof of S(11) >= 43,917,904.
+[[lean_lib]]
+name = "K11"
+globs = ["K11.+"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
